@@ -31,14 +31,24 @@ var root = {
 var app = express();
 
 app.use(require('cors')());
+app.use(express.json());
 
 
 app.post('/post', (req, res) => {
-  res.send({ name: "Tosin", age: 14 });
+  if (req.body) {
+    res.send(req.body);
+  } else {
+    res.send({ type: "POST", name: "Tosin", age: 14 });
+  }
+
 })
 
 app.get('/get', (req, res) => {
-  res.send({ name: "Tosin", age: 29 });
+  if (req.body) {
+    res.send(req.body);
+  } else {
+    res.send({ type: "GET", name: "Tosin", age: 14 });
+  }
 })
 
 app.use('/graphql', graphqlHTTP({
