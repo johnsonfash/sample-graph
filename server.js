@@ -38,6 +38,14 @@ app.use('/', graphqlHTTP({
   graphiql: true,
 }));
 
+app.post('/post', (req, res) => {
+  res.send({ name: "Tosin", age: 14 });
+})
+
+app.get('/get', (req, res) => {
+  res.send({ name: "Tosin", age: 29 });
+})
+
 const port = process.env.PORT || 3000;
 app.listen(port);
 console.log(`Running a GraphQL API server at http://localhost:${port}/graphql`);
