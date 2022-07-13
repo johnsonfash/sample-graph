@@ -32,7 +32,7 @@ var app = express();
 
 app.use(require('cors')());
 
-app.use('/graphql', graphqlHTTP({
+app.use('/', graphqlHTTP({
   schema: schema,
   rootValue: root,
   graphiql: true,
