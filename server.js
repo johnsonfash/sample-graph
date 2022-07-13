@@ -32,11 +32,6 @@ var app = express();
 
 app.use(require('cors')());
 
-app.use('/', graphqlHTTP({
-  schema: schema,
-  rootValue: root,
-  graphiql: true,
-}));
 
 app.post('/post', (req, res) => {
   res.send({ name: "Tosin", age: 14 });
@@ -45,6 +40,14 @@ app.post('/post', (req, res) => {
 app.get('/get', (req, res) => {
   res.send({ name: "Tosin", age: 29 });
 })
+
+app.use('/graphql', graphqlHTTP({
+  schema: schema,
+  rootValue: root,
+  graphiql: true,
+}));
+
+
 
 const port = process.env.PORT || 3000;
 app.listen(port);
