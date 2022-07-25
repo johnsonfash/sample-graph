@@ -1,3 +1,3 @@
 # sample-graphql
 # sample-graph
-hello
+hello world
