@@ -33,7 +33,6 @@ var app = express();
 app.use(require('cors')());
 app.use(express.json());
 
-
 app.post('/post', (req, res) => {
   if (Object.keys(req.body).length) {
     res.send(req.body);
