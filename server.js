@@ -36,9 +36,7 @@ app.use(express.json());
 app.post('/post', (req, res) => {
   if (Object.keys(req.body).length) {
     res.send(req.body);
-    
   } else {
-
     res.send({ type: "POST", name: "Tosin", age: 14 });
   }
 })
